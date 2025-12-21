@@ -1,0 +1,202 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-gradient-to-br from-slate-50 via-white to-deep-50 text-deep-900 tracking-tight;
+    @apply dark:bg-gradient-to-br dark:from-slate-900 dark:via-deep-900 dark:to-slate-900 dark:text-slate-100;
+    @apply transition-colors duration-300;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-black leading-tight text-deep-900 dark:text-white;
+  }
+
+  p {
+    @apply leading-relaxed text-slate-600 dark:text-slate-300;
+  }
+}
+
+@layer components {
+
+  .btn-primary {
+    @apply bg-gradient-to-r from-electric-500 to-electric-600 hover:from-electric-600 hover:to-electric-700 text-white font-bold py-2.5 px-6 rounded-lg transition-all duration-300 hover:shadow-lg hover:shadow-electric-500/30 active:scale-95 inline-flex items-center gap-2;
+  }
+
+  .btn-secondary {
+    @apply bg-white dark:bg-slate-700 text-deep-900 dark:text-white font-semibold py-2.5 px-6 rounded-lg border-2 border-deep-300 dark:border-slate-600 transition-all duration-300 hover:shadow-md hover:border-electric-500 dark:hover:border-electric-500 active:scale-95 inline-flex items-center gap-2;
+  }
+
+  .btn-vivid {
+    @apply bg-gradient-to-r from-vivid-500 to-vivid-600 hover:from-vivid-600 hover:to-vivid-700 text-white font-bold py-2.5 px-6 rounded-lg transition-all duration-300 hover:shadow-lg hover:shadow-vivid-500/30 active:scale-95 inline-flex items-center gap-2;
+  }
+
+  .btn-rose {
+    @apply bg-gradient-to-r from-rose-500 to-rose-600 hover:from-rose-600 hover:to-rose-700 text-white font-bold py-2.5 px-6 rounded-lg transition-all duration-300 hover:shadow-lg hover:shadow-rose-500/30 active:scale-95 inline-flex items-center gap-2;
+  }
+
+  .input-field {
+    @apply w-full px-4 py-3 bg-white dark:bg-slate-800 border-2 border-deep-300 dark:border-slate-600 rounded-lg focus:outline-none focus:border-vivid-500 dark:focus:border-vivid-500 focus:ring-2 focus:ring-vivid-500/20 dark:focus:ring-vivid-500/20 transition-all duration-300;
+  }
+
+  .textarea-field {
+    @apply w-full px-4 py-3 bg-white dark:bg-slate-800 border-2 border-deep-300 dark:border-slate-600 rounded-lg focus:outline-none focus:border-vivid-500 dark:focus:border-vivid-500 focus:ring-2 focus:ring-vivid-500/20 dark:focus:ring-vivid-500/20 transition-all duration-300 resize-none;
+  }
+
+  .select-field {
+    @apply w-full px-4 py-3 bg-white dark:bg-slate-800 border-2 border-deep-300 dark:border-slate-600 rounded-lg focus:outline-none focus:border-vivid-500 dark:focus:border-vivid-500 focus:ring-2 focus:ring-vivid-500/20 dark:focus:ring-vivid-500/20 transition-all duration-300 appearance-none;
+  }
+  .gradient-text {
+    @apply bg-gradient-to-r from-vivid-600 via-rose-500 to-electric-500 bg-clip-text text-transparent;
+  }
+
+  .gradient-text-purple {
+    @apply bg-gradient-to-r from-vivid-600 to-vivid-500 bg-clip-text text-transparent;
+  }
+
+  .gradient-text-blue {
+    @apply bg-gradient-to-r from-electric-600 to-electric-500 bg-clip-text text-transparent;
+  }
+
+  .glass-effect {
+    @apply bg-white/90 dark:bg-slate-800/90 backdrop-blur-xl border border-white/40 dark:border-slate-700/40 rounded-xl shadow-lg;
+  }
+  .glow-purple {
+    @apply shadow-lg shadow-vivid-500/50 dark:shadow-vivid-400/30;
+  }
+
+  .glow-blue {
+    @apply shadow-lg shadow-electric-500/50 dark:shadow-electric-400/30;
+  }
+
+  .glow-rose {
+    @apply shadow-lg shadow-rose-500/50 dark:shadow-rose-400/30;
+  }
+
+  .hover-grow {
+    @apply transition-transform duration-300 hover:scale-105 cursor-pointer;
+  }
+  .card-shine {
+    @apply bg-gradient-to-br from-white to-slate-50 dark:from-slate-800 dark:to-slate-900 border-2 border-deep-200 dark:border-slate-700 rounded-xl shadow-md hover:shadow-xl transition-all duration-300;
+  }
+
+  .page-container {
+    @apply container mx-auto px-6 py-8 max-w-7xl;
+  }
+
+  .page-header {
+    @apply mb-8 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4;
+  }
+
+  .heading-large {
+    @apply text-4xl font-black bg-gradient-to-r from-vivid-600 to-electric-600 bg-clip-text text-transparent;
+  }
+
+  .heading-medium {
+    @apply text-3xl font-black text-deep-900 dark:text-white;
+  }
+
+  .heading-small {
+    @apply text-2xl font-bold text-deep-900 dark:text-white;
+  }
+
+  .status-badge {
+    @apply inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wide;
+  }
+
+  .status-lost {
+    @apply bg-gradient-to-r from-vivid-100 to-vivid-200 dark:from-vivid-900/30 dark:to-vivid-800/30 text-vivid-700 dark:text-vivid-400;
+  }
+
+  .status-found {
+    @apply bg-gradient-to-r from-electric-100 to-electric-200 dark:from-electric-900/30 dark:to-electric-800/30 text-electric-700 dark:text-electric-400;
+  }
+}
+
+@layer utilities {
+
+  .bg-gradient-subtle {
+    background: linear-gradient(135deg, #f9fafb 0%, #ffffff 50%, #fdf4ff 100%);
+  }
+  .dark .bg-gradient-subtle {
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #1a1625 100%);
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.5s ease-out;
+  }
+
+  @keyframes slideInTop {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-slide-in-top {
+    animation: slideInTop 0.4s ease-out;
+  }
+
+  @keyframes slideInRight {
+    from {
+      opacity: 0;
+      transform: translateX(100px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  .animate-slide-in-right {
+    animation: slideInRight 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+
+  @keyframes bounceIn {
+    0% {
+      opacity: 0;
+      transform: scale(0.3);
+    }
+
+    50% {
+      opacity: 1;
+      transform: scale(1.05);
+    }
+
+    70% {
+      transform: scale(0.9);
+    }
+
+    100% {
+      transform: scale(1);
+    }
+  }
+
+  .animate-bounce-in {
+    animation: bounceIn 0.6s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+  }
+}
