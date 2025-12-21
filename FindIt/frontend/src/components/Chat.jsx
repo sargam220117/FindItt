@@ -14,7 +14,7 @@ const Chat = ({ responseId }) => {
   const socketRef = useRef();
 
   useEffect(() => {
-    socketRef.current = io('http://localhost:5000');
+    socketRef.current = io('https://finditt-backend-bzyl.onrender.com');
 
     socketRef.current.emit('joinRoom', responseId);
 
@@ -116,5 +116,6 @@ const Chat = ({ responseId }) => {
     </div>
   );
 };
+
 
 export default Chat;
