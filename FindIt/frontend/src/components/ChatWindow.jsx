@@ -11,7 +11,7 @@ const ChatWindow = ({ responseId, onClose }) => {
   const socketRef = useRef();
 
   useEffect(() => {
-    socketRef.current = io('http://localhost:5000');
+    socketRef.current = io('https://finditt-backend-bzyl.onrender.com');
 
     socketRef.current.emit('joinRoom', responseId);
 
@@ -21,7 +21,7 @@ const ChatWindow = ({ responseId, onClose }) => {
 
     const fetchMessages = async () => {
       try {
-        const res = await fetch(`http://localhost:5000/api/chat/${responseId}`, {
+        const res = await fetch(`https://finditt-backend-bzyl.onrender.com/api/chat/${responseId}`, {
           headers: {
             'Authorization': `Bearer ${localStorage.getItem('token')}`
           }
@@ -29,7 +29,7 @@ const ChatWindow = ({ responseId, onClose }) => {
         const data = await res.json();
         setMessages(data);
         
-        await fetch(`http://localhost:5000/api/chat/${responseId}/read`, {
+        await fetch(`https://finditt-backend-bzyl.onrender.com/api/chat/${responseId}/read`, {
           method: 'PUT',
           headers: {
             'Authorization': `Bearer ${localStorage.getItem('token')}`
@@ -57,7 +57,7 @@ const ChatWindow = ({ responseId, onClose }) => {
     if (!newMessage.trim()) return;
 
     try {
-      const res = await fetch(`http://localhost:5000/api/chat/${responseId}`, {
+      const res = await fetch(`https://finditt-backend-bzyl.onrender.com/api/chat/${responseId}`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -131,5 +131,6 @@ const ChatWindow = ({ responseId, onClose }) => {
     </div>
   );
 };
+
 
 export default ChatWindow;
