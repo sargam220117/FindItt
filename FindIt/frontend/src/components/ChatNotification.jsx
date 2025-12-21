@@ -12,7 +12,7 @@ const ChatNotification = () => {
   useEffect(() => {
     if (!user) return;
 
-    socketRef.current = io('http://localhost:5000');
+    socketRef.current = io('https://finditt-backend-bzyl.onrender.com');
 
     socketRef.current.on('message', (message) => {
       if (message.sender._id !== user._id) {
@@ -73,5 +73,6 @@ const ChatNotification = () => {
     </Link>
   );
 };
+
 
 export default ChatNotification;
