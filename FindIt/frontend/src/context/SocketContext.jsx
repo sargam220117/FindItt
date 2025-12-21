@@ -14,7 +14,7 @@ export const SocketProvider = ({ children }) => {
         if (user) {
             console.log('[SocketContext] User logged in, initializing socket connection');
 
-            const newSocket = io(import.meta.env.VITE_SOCKET_URL || 'http://localhost:5000', {
+            const newSocket = io(import.meta.env.VITE_SOCKET_URL || 'https://finditt-backend-bzyl.onrender.com, {
                 transports: ['websocket', 'polling'],
                 reconnection: true,
                 reconnectionAttempts: 5,
